@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python test_recall_e2e.py)",
+      "Bash(set GROQ_MODEL=llama3-8b-8192)",
+      "Bash(set GROQ_MODEL=llama-3.1-8b-instant)",
+      "Bash(pip install *)",
+      "Bash(pip show *)",
+      "Bash(findstr Version)",
+      "Bash(GEMINI_API_KEY=\"\" python test_recall_e2e.py)",
+      "Bash(tee recall_e2e_results.txt)",
+      "Bash(python -c ' *)",
+      "Bash(GEMINI_API_KEY=\"\" GROQ_MODEL=llama-3.3-70b-versatile python test_recall_e2e.py)"
+    ]
+  }
+}
