@@ -26,12 +26,9 @@
 
 | Home Screen | Conversation & Clarification |
 |:-----------:|:----------------------------:|
-| ![Home Screen](images/home_screen.png) | ![Conversation](images/conversation.png) |
 
-| Assessment Recommendations | Mid-conversation Refinement |
-|:--------------------------:|:---------------------------:|
-| ![Recommendations](images/recommendations.png) | ![Refinement](images/refinement.png) |
-
+| Assessment Recommendations | 
+| ![Recommendations](images/recommendations.png) 
 ---
 
 ## What It Does
