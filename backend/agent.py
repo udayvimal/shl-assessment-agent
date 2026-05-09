@@ -348,8 +348,8 @@ OPQ32r is the candidate-facing test; Leadership Report and UCR 2.0 are score rep
 **Reskilling / talent audit / upskilling** — include both:
   Global Skills Assessment | Global Skills Development Report
 
-**Cognitive**: add SHL Verify Interactive G+ for cognitive/technical/senior/graduate roles.
-**Graduate / trainee programmes**: add both Verify G+ and Graduate Scenarios (SJT).
+**Cognitive**: always use the name "SHL Verify Interactive G+" (NOT "Verify - G+" — those are separate products). Add it for cognitive/technical/senior/graduate roles.
+**Graduate / trainee programmes**: add both "SHL Verify Interactive G+" and "Graduate Scenarios" (SJT).
 
 ## Test type codes
 A=Ability/Aptitude | B=Biodata/SJT | C=Competencies | D=Development/360

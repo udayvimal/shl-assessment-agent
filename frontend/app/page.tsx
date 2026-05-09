@@ -17,7 +17,14 @@ const STARTER_PROMPTS = [
   "I'm hiring a Java developer who works with stakeholders",
   "Looking for personality and cognitive tests for a sales manager",
   "Need assessments for a mid-level data analyst role",
-  "What tests would suit a software engineer, 5 years experience?",
+  "Hiring a senior data engineer — SQL, Python, cloud infrastructure",
+];
+
+const EXPERIENCE_CHIPS = [
+  { label: "Entry-level  (0–2 yrs)", prefix: "Entry-level role (0–2 years experience). " },
+  { label: "Mid-level (3–5 yrs)", prefix: "Mid-level (3–5 years experience). " },
+  { label: "Senior (6–10 yrs)", prefix: "Senior-level (6–10 years experience). " },
+  { label: "Leadership / Executive", prefix: "Leadership / Executive role (10+ years experience). " },
 ];
 
 export default function Home() {
@@ -116,6 +123,21 @@ export default function Home() {
                   {prompt}
                 </button>
               ))}
+            </div>
+
+            <div className="w-full max-w-md">
+              <p className="text-xs text-slate-400 text-center mb-2">Or start by seniority level</p>
+              <div className="flex flex-wrap justify-center gap-2">
+                {EXPERIENCE_CHIPS.map((chip) => (
+                  <button
+                    key={chip.label}
+                    onClick={() => setInput((prev) => chip.prefix + (prev.trimStart()))}
+                    className="text-xs text-shl-blue bg-white border border-slate-200 rounded-full px-3 py-1.5 hover:border-shl-teal hover:shadow-sm transition-all"
+                  >
+                    {chip.label}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         )}
