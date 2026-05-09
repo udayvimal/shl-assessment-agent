@@ -499,32 +499,8 @@ def _get_client() -> Groq:
     return _client
 
 
-def _call_groq(system: str, messages: list[dict]) -> str:
-    """Call Groq LLM with retry on transient 429s."""
-    import time as _time
-    from groq import RateLimitError
-    client = _get_client()
-    model = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
-    for attempt in range(4):
-        try:
-            response = client.chat.completions.create(
-                model=model,
-                messages=[{"role": "system", "content": system}] + messages,
-                temperature=0.15,
-                max_tokens=1500,
-                response_format={"type": "json_object"},
-            )
-            return response.choices[0].message.content or ""
-        except RateLimitError:
-            if attempt == 3:
-                raise
-            wait = 10 * (2 ** attempt)  # 10s, 20s, 40s
-            _time.sleep(wait)
-    return ""
-
-
 def _call_gemini(system: str, messages: list[dict]) -> str:
-    """Call Gemini Flash. Raises immediately on 429 so caller falls back to Groq."""
+    """Primary LLM: Gemini 2.0 Flash (free 1500 RPD). Raises on any error."""
     api_key = os.environ["GEMINI_API_KEY"]
     model = os.environ.get("GEMINI_MODEL", "gemini-2.0-flash")
     url = (
@@ -545,9 +521,23 @@ def _call_gemini(system: str, messages: list[dict]) -> str:
         },
     }
     r = _httpx.post(url, json=payload, timeout=25)
-    r.raise_for_status()  # 429 raises immediately → chat() falls back to Groq
+    r.raise_for_status()
     data = r.json()
     return data["candidates"][0]["content"]["parts"][0]["text"]
+
+
+def _call_groq(system: str, messages: list[dict]) -> str:
+    """Silent fallback LLM: Groq. Single attempt, no retries."""
+    client = _get_client()
+    model = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
+    response = client.chat.completions.create(
+        model=model,
+        messages=[{"role": "system", "content": system}] + messages,
+        temperature=0.15,
+        max_tokens=1500,
+        response_format={"type": "json_object"},
+    )
+    return response.choices[0].message.content or ""
 
 
 def chat(messages: list[dict]) -> dict[str, Any]:
@@ -555,13 +545,10 @@ def chat(messages: list[dict]) -> dict[str, Any]:
     candidates = _retrieve(query, top_n=40)
     system = _build_system_prompt(candidates)
 
-    # Gemini primary (free 1500 RPD), Groq fallback
-    if os.environ.get("GEMINI_API_KEY"):
-        try:
-            raw = _call_gemini(system, messages)
-        except Exception:
-            raw = _call_groq(system, messages)
-    else:
+    # Gemini is primary. Groq is silent fallback if Gemini fails.
+    try:
+        raw = _call_gemini(system, messages)
+    except Exception:
         raw = _call_groq(system, messages)
 
     return _parse_response(raw)

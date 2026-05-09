@@ -19,9 +19,9 @@ load_dotenv()
 
 import agent as shl_agent
 
-# Eval uses llama-4-scout: capable, separate daily quota from production 70b model.
-# Override with: GROQ_MODEL=llama-3.3-70b-versatile python test_recall_e2e.py
-os.environ.setdefault("GROQ_MODEL", "meta-llama/llama-4-scout-17b-16e-instruct")
+# Eval uses same Gemini primary as production. Set GEMINI_API_KEY in env.
+# Groq fallback: GROQ_MODEL defaults to llama-3.3-70b-versatile if Gemini fails.
+os.environ.setdefault("GROQ_MODEL", "llama-3.3-70b-versatile")
 
 # Each trace: ordered user turns taken from C1.md–C10.md
 # We stop at the last turn where the user confirmed the shortlist.
