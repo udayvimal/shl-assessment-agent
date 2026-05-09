@@ -113,8 +113,13 @@ def chat(request: ChatRequest, req: Request) -> ChatResponse:
 
     try:
         result: dict[str, Any] = shl_agent.chat(messages)
-    except Exception as exc:
-        raise HTTPException(status_code=502, detail=str(exc)) from exc
+    except Exception:
+        return ChatResponse(
+            reply="I'm temporarily unavailable due to high demand. Please try again in a moment.",
+            recommendations=[],
+            suggestions=[],
+            end_of_conversation=False,
+        )
 
     return ChatResponse(
         reply=result["reply"],
