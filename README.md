@@ -2,6 +2,24 @@
 
 A conversational AI agent that recommends assessments from the SHL Individual Test Catalog.
 
+**Live Demo:** [Frontend on Vercel](https://shl-assessment-agent.vercel.app) | **API:** [Backend on Render](https://shl-assessment-agent-yvzp.onrender.com)
+
+---
+
+## Screenshots
+
+### Home Screen — Starter Prompts & Seniority Chips
+![Home Screen](images/home_screen.png)
+
+### Multi-turn Conversation with Clarification
+![Conversation](images/conversation.png)
+
+### Assessment Recommendations with Type Badges
+![Recommendations](images/recommendations.png)
+
+### Mid-conversation Refinement
+![Refinement](images/refinement.png)
+
 ---
 
 ## Quick Start — Run Everything
