@@ -24,11 +24,10 @@
 
 ## Screenshots
 
-| Home Screen | Conversation & Clarification |
-|:-----------:|:----------------------------:|
+| Assessment Recommendations | API Health Check |
+|:--------------------------:|:----------------:|
+| ![Recommendations](images/recommendations.png) | ![Health](images/health.png) |
 
-| Assessment Recommendations | 
-| ![Recommendations](images/recommendations.png) 
 ---
 
 ## What It Does
