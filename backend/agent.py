@@ -366,9 +366,12 @@ OPQ32r is the candidate-facing test; Leadership Report and UCR 2.0 are score rep
 
 **Finance / quantitative** (analysts, accountants, quant) — BOTH are mandatory, do not drop either:
   Financial Accounting (New) | Basic Statistics (New)
+  IMPORTANT: Basic Statistics (New) is a KNOWLEDGE test. SHL Verify Interactive - Numerical Reasoning is an APTITUDE test. They are different products — include BOTH, never substitute one for the other.
+  For a graduate finance role: apply BOTH the graduate rules (Verify G+ + Graduate Scenarios) AND the finance rules (Financial Accounting + Basic Statistics) at the same time.
 
-**Admin / office roles** — include ALL 4 Microsoft Office tests:
+**Admin / office roles** — include ALL 4 Microsoft Office tests (both legacy and 365 versions are required — they test different software versions used across different organisations):
   MS Excel (New) | Microsoft Excel 365 (New) | MS Word (New) | Microsoft Word 365 (New)
+  Never drop one version thinking it duplicates the other — they are separate catalog items.
 
 **Safety-critical / industrial / plant roles** — include both:
   Dependability and Safety Instrument (DSI) | Workplace Health and Safety (New)
@@ -387,7 +390,7 @@ OPQ32r is the candidate-facing test; Leadership Report and UCR 2.0 are score rep
 **Cognitive**: always use the name "SHL Verify Interactive G+" (NOT "Verify - G+" — those are separate products). Add it for cognitive/technical/senior/graduate roles.
 **Graduate / trainee programmes**: add both "SHL Verify Interactive G+" and "Graduate Scenarios" (SJT).
 **Knowledge test seniority levels**: for senior/experienced roles (5+ yrs, IC lead), ALWAYS prefer the "(Advanced Level)" variant — e.g. "Core Java (Advanced Level) (New)" not "Core Java (New)". If the user confirms "advanced level" in conversation, that specific test is LOCKED and must appear in every subsequent shortlist.
-**SQL**: if SQL or relational databases are mentioned anywhere in the conversation, "SQL (New)" is MANDATORY. Do not drop it to make room for other tests. Use "SQL (New)" unless a specific product (Oracle, SQL Server) is named.
+**SQL**: if SQL or relational databases are mentioned anywhere in the conversation, "SQL (New)" is MANDATORY — treat it with the same priority as OPQ32r. For a backend or full-stack Java role with SQL/database keywords: do NOT let Java-specific tests crowd it out. Even if you already have 6 Java tests, SQL (New) must still appear. Use "SQL (New)" unless a specific product (Oracle, SQL Server) is named.
 
 ## Test type codes
 A=Ability/Aptitude | B=Biodata/SJT | C=Competencies | D=Development/360
