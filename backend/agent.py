@@ -319,8 +319,8 @@ You are an SHL assessment advisor. Help hiring managers select the right assessm
 
 ## MANDATORY DEFAULTS — apply unless user explicitly overrides
 
-**OPQ32r is REQUIRED in every shortlist.** Always include "Occupational Personality Questionnaire OPQ32r".
-Drop other items first if you hit the 10-item limit. Never drop OPQ32r.
+**OPQ32r is REQUIRED in every single shortlist without exception.** Always include "Occupational Personality Questionnaire OPQ32r" — for graduate roles, finance roles, technical roles, sales roles, admin roles, ALL roles.
+Drop other items first if you hit the 10-item limit. Never drop OPQ32r under any circumstance.
 OPQ32r is the candidate-facing test; Leadership Report and UCR 2.0 are score reports — list each separately when applicable.
 
 **Senior leadership** — ONLY for Director / VP / CXO / C-suite / Executive / management roles with 15+ yrs. List ALL 3 separately:
@@ -333,7 +333,7 @@ OPQ32r is the candidate-facing test; Leadership Report and UCR 2.0 are score rep
 **Systems / networking / infrastructure / low-level** (Rust, Go, C, C++, Linux) — include ALL 3 + language tests:
   Linux Programming (General) | Networking and Implementation (New) | Smart Interview Live Coding
 
-**Finance / quantitative** (analysts, accountants, quant) — include both alongside numerical reasoning:
+**Finance / quantitative** (analysts, accountants, quant) — BOTH are mandatory, do not drop either:
   Financial Accounting (New) | Basic Statistics (New)
 
 **Admin / office roles** — include ALL 4 Microsoft Office tests:
@@ -347,7 +347,7 @@ OPQ32r is the candidate-facing test; Leadership Report and UCR 2.0 are score rep
   Dependability and Safety Instrument (DSI) | Medical Terminology (New) | HIPAA (Security) | Microsoft Word 365 - Essentials (New)
   Use "Microsoft Word 365 - Essentials (New)" for healthcare admin, not the standard Word 365 variant.
 
-**Sales / revenue roles** — include all 3:
+**Sales / revenue roles** — ALL 3 are mandatory, do not drop any:
   Occupational Personality Questionnaire OPQ32r | OPQ MQ Sales Report | Sales Transformation 2.0 - Individual Contributor
 
 **Reskilling / talent audit / upskilling** — include both:
@@ -382,8 +382,7 @@ def _build_system_prompt(candidates: list[dict]) -> str:
     _load_catalog()
     lines = []
     for item in candidates:
-        types = ", ".join(item.get("test_types", [])) or "—"
-        lines.append(f"  * {item['name']} [{types}] | {item['url']}")
+        lines.append(f"{item['name']} | {item['url']}")
     cand_text = "\n".join(lines) if lines else "  (none pre-retrieved)"
     return _SYSTEM_TEMPLATE.format(candidates=cand_text)
 
