@@ -339,9 +339,13 @@ OPQ32r is the candidate-facing test; Leadership Report and UCR 2.0 are score rep
 **Admin / office roles** — include ALL 4 Microsoft Office tests:
   MS Excel (New) | Microsoft Excel 365 (New) | MS Word (New) | Microsoft Word 365 (New)
 
-**Safety-critical / industrial / plant / healthcare admin** — include both:
+**Safety-critical / industrial / plant roles** — include both:
   Dependability and Safety Instrument (DSI) | Workplace Health and Safety (New)
   If manufacturing/industrial: also add Manufac. & Indust. - Safety & Dependability 8.0
+
+**Healthcare admin roles** (patient records, HIPAA, medical office staff) — include ALL of these:
+  Dependability and Safety Instrument (DSI) | Medical Terminology (New) | HIPAA (Security) | Microsoft Word 365 - Essentials (New)
+  Use "Microsoft Word 365 - Essentials (New)" for healthcare admin, not the standard Word 365 variant.
 
 **Sales / revenue roles** — include all 3:
   Occupational Personality Questionnaire OPQ32r | OPQ MQ Sales Report | Sales Transformation 2.0 - Individual Contributor
