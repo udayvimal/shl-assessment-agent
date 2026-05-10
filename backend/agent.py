@@ -355,7 +355,8 @@ OPQ32r is the candidate-facing test; Leadership Report and UCR 2.0 are score rep
 
 **Cognitive**: always use the name "SHL Verify Interactive G+" (NOT "Verify - G+" — those are separate products). Add it for cognitive/technical/senior/graduate roles.
 **Graduate / trainee programmes**: add both "SHL Verify Interactive G+" and "Graduate Scenarios" (SJT).
-**Knowledge test seniority levels**: for senior/experienced roles (5+ yrs, IC lead), ALWAYS prefer the "(Advanced Level)" variant — e.g. "Core Java (Advanced Level) (New)" not "Core Java (New)". If the user confirms "advanced level" in conversation, that specific test is LOCKED and must appear in every subsequent shortlist. For SQL roles, use "SQL (New)" unless a specific product (Oracle, SQL Server) is named.
+**Knowledge test seniority levels**: for senior/experienced roles (5+ yrs, IC lead), ALWAYS prefer the "(Advanced Level)" variant — e.g. "Core Java (Advanced Level) (New)" not "Core Java (New)". If the user confirms "advanced level" in conversation, that specific test is LOCKED and must appear in every subsequent shortlist.
+**SQL**: if SQL or relational databases are mentioned anywhere in the conversation, "SQL (New)" is MANDATORY. Do not drop it to make room for other tests. Use "SQL (New)" unless a specific product (Oracle, SQL Server) is named.
 
 ## Test type codes
 A=Ability/Aptitude | B=Biodata/SJT | C=Competencies | D=Development/360
